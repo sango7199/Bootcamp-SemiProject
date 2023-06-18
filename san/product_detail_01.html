@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 리스트</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- header 영역  -->
+    <iframe class="iframe-header" src="../view/common/mall_header.html"></iframe>
+
+    <!-- content 영역  -->
+    <div class="content">
+      <div class="page_title"><h2>상품 상세</h2></div>
+      <div class="page_breadcrumb">
+        <a href="../view/mall_main.html">상품</a>><a href="../san/product_list.html">상품리스트</a>><a class="current" href="../san/product_detail_01.html">상품 상세</a>
+      </div>
+      <div class="prd_detail">
+        <div class="prdimage">
+          <div class="bigImages">
+            <img id="big" src="../img/thumbnail_01.jpg" alt="썸네일 이미지1" />
+          </div>
+          <div class="smallImages">
+            <img class="small active" src="../img/thumbnail_01.jpg" alt="썸네일 이미지1" onclick="showImage(this)"/>
+            <img class="small" src="../img/apple01.jpg" alt="썸네일 이미지2" onclick="showImage(this)"/>
+            <img class="small" src="../img/apple02.jpg" alt="썸네일 이미지3" onclick="showImage(this)"/>
+          </div>
+        </div>
+        <div class="prd_order">
+          <div class="prd_info">
+          <h3>상품 번호 : 01</h3>
+          <h1>상품명 : 당도 보장 충주 사과(2kg)</h1><br>
+          <ul>
+            <li>원산지 : 충청북도 충주시</li>
+            <li>가격 : 10,000원</li>
+            <li><div class="qty_btn">
+              <button class="down_btn">﹣</button>
+              <input type="text" id="order_qty" inputmode="numeric" value="1">
+              <button class="up_btn">﹢</button>
+            </div></li>
+            <li id="order_total">주문 금액 : 10,000원</li>
+          </ul>
+          </div>
+          <div class="order_info">
+            <ul>
+              <li><label>주문자와 동일  </label><input type="checkbox" id="order_cb"><label for="order_cb"></label></li>
+              <li><label>수취인명<br></label><input type="text" id="recipient" placeholder="10자 이내로 입력하세요." maxlength="10"></li>
+              <li><label>배송지 주소<br></label><input type="text" class="address" placeholder="도로명 주소">  <input type="text" class="address" placeholder="상세주소"> </li>
+              <li><label>연락처<br></label>
+                <select class="phone_num"> 
+                  <option value="010">010</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+                  <option value="019">019</option>
+                </select> - 
+              <input type="text" class="phone_num" inputmode="numeric" maxlength="4"> - <input type="text" class="phone_num" inputmode="numeric" maxlength="4">
+              </li>
+              <li><button class="order_btn btnPush">주문하기</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="prd_info_image">
+        <img src="" />
+        <!-- 일단 비워둡니다~ -->
+      </div>
+    </div>
+
+    <!-- footer 영역  -->
+    <iframe class="iframe-footer" src="../view/common/footer.html"></iframe>
+  </body>
+  <!-- Script -->
+  <script src="../js/script.js"></script>
+</html>

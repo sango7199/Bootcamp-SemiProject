@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gorugoru</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+</head>
+<body>
+    <!-- header 영역  -->
+    <iframe class="iframe-header" src="../view/common/mall_header.html"></iframe>
+   
+
+    <!-- content 영역  -->
+    <div class="content">
+        <div class="slider">
+            <img id="sliderImage" src="../img/slider1.jpg" alt="슬라이드 이미지">
+        </div>
+        <h1>최저가 TOP3</h1>
+        <section class="image-grid">
+            <div class="grid-item">
+                <div class="product-info">
+                    <span>상품명: 당도 보장 충주 사과(3개)</span>
+                    <span>가격: 2,000원</span>
+                </div>
+                <img src="../img/thumbnail_01.jpg" alt="사과">
+            </div>
+            <div class="grid-item">
+                <div class="product-info">
+                    <span>상품명: 국산 바나나 1송이</span>
+                    <span>가격: 4,000원</span>
+                </div>
+                <img src="../img/thumbnail_02.jpg" alt="바나나">
+            </div>
+            <div class="grid-item">
+                <div class="product-info">
+                    <span>상품명: 강원도 알감자(5Kg)</span>
+                    <span>가격: 10,000원</span>
+                </div>
+                <img src="../img/thumbnail_03.jpg" alt="감자">
+            </div>
+        </section>
+    </div>
+
+    <!-- footer 영역  -->
+    <iframe class="iframe-footer" src="../view/common/footer.html"></iframe>
+
+    <!-- sliderImage 스크립트  -->
+    <script>
+        function changeSliderImage() {
+            var sliderImage = document.getElementById("sliderImage");
+            var imageIndex = 1;
+            var images = [
+                "../img/slider1.jpg",
+                "../img/slider2.jpg",
+                "../img/slider3.jpg"
+            ];
+
+            setInterval(function() {
+                sliderImage.style.opacity = 0; // 이미지 투명도를 0으로 설정
+                setTimeout(function() {
+                    sliderImage.src = images[imageIndex];
+                    sliderImage.style.opacity = 1; // 이미지 투명도를 1로 설정
+                    imageIndex++;
+                    if (imageIndex >= images.length) {
+                        imageIndex = 0;
+                    }
+                }, 500); // 이미지 변경 후 0.5초 후에 투명도를 다시 1로 설정
+            }, 5000);
+        }
+        window.addEventListener("load", changeSliderImage);
+    </script>
+
+</body>
+</html>

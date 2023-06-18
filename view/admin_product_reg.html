@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gorugoru</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+</head>
+<body>
+    <!-- header 영역  -->
+    <iframe class="iframe-header" src="../view/common/admin_header.html"></iframe>
+    
+
+    <!-- content 영역  -->
+    <div class="content">
+        <div class="title">
+            <img id="titleImage" src="../img/title.jpg" alt="타이틀 이미지">
+            <h2 class="title-text">상품 등록</h2>
+        </div>
+        <div class="breadcrumb">
+            <a href="admin_product_list.html">상품 관리</a> > 상품 등록
+        </div>
+        <div class="product-reg">
+            <div class="product-reg-left">
+                <h3>상품 구분</h3>
+                <select>
+                    <option>과일류</option>
+                    <option>엽채류</option>
+                    <option>경채류</option>
+                    <option>근채류</option>
+                    <option>구근류</option>
+                    <option>과채류</option>
+                    <option>화채류</option>
+                </select>
+                <h3>상품명</h3>
+                <input type="text">
+                <h3>원산지</h3>
+                <input type="text">
+                <h3>가격</h3>
+                <input type="number">
+                <h3>재고</h3>
+                <input type="number"></br></br>
+                <button>초기화</button>
+                <button>등록</button>
+            </div>
+            <div class="product-reg-midlle">
+                <h3>상품 이미지(썸네일)</h3>
+                <input type="file" id="thumbnail_fileInput" style="display: none;">
+                <div>
+                    <span id="thumbnail_fileName"></span>
+                    <img id="previewImage" style="display: none; width: 200px;">
+                </div>
+                </br>
+                <button onclick="document.getElementById('thumbnail_fileInput').click()">파일 첨부</button>
+              </div>
+              
+              <div class="product-reg-right">
+                <h3>상품 이미지(상세)</h3>
+                <input type="file" id="detail_fileInput" style="display: none;">
+                <div>
+                    <span id="detail_fileName"></span>
+                    <img id="detailPreviewImage" style="display: none; width: 200px;">
+                </div>
+                </br>
+                <button onclick="document.getElementById('detail_fileInput').click()">파일 첨부</button>
+              </div>
+        </div>
+    </div>
+
+    <!-- footer 영역  -->
+    <iframe class="iframe-footer" src="../view/common/footer.html"></iframe>
+    
+    <!-- 이미지 첨부 관련 script -->
+    <script>
+        document.getElementById('thumbnail_fileInput').addEventListener('change', function() {
+          var file = this.files[0];
+          if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              document.getElementById('previewImage').src = e.target.result;
+              document.getElementById('previewImage').style.display = 'block';
+              document.getElementById('thumbnail_fileName').textContent = file.name;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      
+        document.getElementById('detail_fileInput').addEventListener('change', function() {
+          var file = this.files[0];
+          if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              document.getElementById('detailPreviewImage').src = e.target.result;
+              document.getElementById('detailPreviewImage').style.display = 'block';
+              document.getElementById('detail_fileName').textContent = file.name;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+    </script>
+</body>
+</html>

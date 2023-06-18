@@ -1,0 +1,232 @@
+/* 정회산 구현 */
+/* product_list page */
+.content {
+}
+
+.page_title {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-image: url(/img/slider1.jpg);
+  background-repeat: no-repeat;
+  background-color: #fe6641;
+  background-position: center;
+  padding: 3rem;
+}
+.page_title h2 {
+  color: white;
+}
+
+.page_breadcrumb {
+  display: flex;
+  justify-content: right;
+  align-content: center;
+  padding: 0.5rem;
+}
+.page_breadcrumb a {
+  padding: 0px 3px;
+  color: black;
+}
+.page_breadcrumb a.current {
+  color: #fe6641;
+}
+
+.prdlist_prd {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin: 1rem;
+}
+.prd_image {
+  width: 320px;
+  height: 320px;
+}
+.prdlist_prd_list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.prdlist_prd_list:hover {
+  box-shadow: 2px 2px 20px #ddd;
+}
+.prdlist_prd_list a {
+  color: black;
+}
+.prdlist_prd_list a:hover {
+  color: #fe6641;
+}
+.prdlist_prd_list div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: auto;
+  padding-top: 2px;
+}
+
+/* product_detail page */
+.prd_detail {
+    display: flex;
+    flex-direction: row;
+}
+
+.prdimage {
+  padding: 30px 10px 15px 20px;
+  text-align: left;
+  display: flex;
+}
+.bigImages{
+  margin-right: 10px;
+}
+#big {
+  width: 510px;
+  height: 510px;
+}
+.small {
+  display: flex;
+  width: 170px;
+  height: 170px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.active {
+    opacity: 1;
+}
+
+.prd_order {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px 15px;
+}
+.prd_detail, .prd_info{
+    padding-bottom: 0.5rem;
+    box-sizing: border-box;
+    border-bottom: solid #d2d2d2 1px;
+}
+.prd_order h1 {
+    margin: 0;
+    color: black;
+}
+.prd_order ul {
+    font-size: 15px;
+}
+.prd_order li {
+    list-style-type: none;
+    font-weight: bold;
+}
+.qty_btn {
+    display: flex;
+    flex-direction: row;
+    padding: 1px 1px 2px;
+}
+.up_btn, .down_btn {
+    all: unset;
+    border: solid #d2d2d2 1px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #a0a0a0;
+}
+#order_qty {
+    width: 30px;
+    text-align: center;
+    border: solid #d2d2d2 1px;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+#order_total {
+    font-size: 20px;
+}
+.order_info {
+    padding-top: 0.5rem;
+}
+.order_info li {
+    padding: 5px 0px 5px;
+}
+.order_btn {
+    margin-top: 0.5rem;
+    display: block;
+    position: relative;
+    float: left;
+    width: 120px;
+    padding: 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    color: #FFF;
+    border-radius: 5px;
+    transition: all 0.2s ;
+    background-color: #fe6641;
+    box-shadow: 0px 5px 0px 0px #cb5234;
+}
+.btnPush:hover {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.order_btn.btnPush:hover {
+    box-shadow: 0px 0px 0px 0px #cb5234;
+}
+input[id="order_cb"] + label {
+    position: relative;
+    top: 2px;
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+    border-radius: 90%;
+	border: 1px solid #bcbcbc;
+	cursor: pointer;
+}
+input[id="order_cb"]:checked + label {
+	background-color: #fe6641;
+}
+input[id="order_cb"] {
+	display: none;
+}
+input[id="recipient"] {
+  width: 170px;
+  height: 18px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+input[class="address"]{
+    width: 250px;
+    height: 18px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+}
+select[class="phone_num"]{
+    width: 53px;
+    height: 18px;
+    font-size: 13px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+}
+input[class="phone_num"]{
+    width: 40px;
+    height: 18px;
+    font-size: 13px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+  }
+/* 정회산 구현 */
